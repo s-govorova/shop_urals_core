@@ -2,8 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from datetime import datetime
-class BaseMethod:
 
+
+class BaseMethod:
     def __init__(self, driver):
         self.driver = driver
 
@@ -32,13 +33,9 @@ class BaseMethod:
         key = Keys()
         webelement.send_keys(key.ENTER)
 
-
     def screenshot_finish_test(self):
         '''Создание скриншота по окончании тестов'''
         part_name_screen = datetime.now().strftime("%Y.%m.%d-%H.%M.%S")
         name_screenshot = 'screen' + part_name_screen + '.png'
         self.driver.save_screenshot(f"C:\\Sonya_Work\Shop_Urals\\screenshot\\{name_screenshot}")
         print('Скриншот по окончании тестов сохранен!')
-
-
-

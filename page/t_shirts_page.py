@@ -3,7 +3,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from base.base_method import BaseMethod
 
-class TSHIRTS(BaseMethod):
+
+class TShirts(BaseMethod):
     # locators
     BUTTON_SHOP = (By.XPATH, "(//a[@title='Магазин'])[3]")  # (//a[@title='Магазин'])[3]
     TSHiRT_NUMBER_5 = (By.CSS_SELECTOR, " .first.post-21727.product")  # черная
@@ -31,13 +32,3 @@ class TSHIRTS(BaseMethod):
         self.click_webelement(self.enter_shop())
         self.assert_text(self.enter_tshirt_price(), '2,590')
         self.click_webelement(self.enter_tshirt())
-
-
-
-
-
-
-
-
-
-

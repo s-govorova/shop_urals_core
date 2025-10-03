@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
+
 class ProductDescription(BaseMethod):
     #locators
     SIZE_M = (By.XPATH, "//li[@data-wvstooltip='M']")
@@ -51,6 +52,3 @@ class ProductDescription(BaseMethod):
         self.click_webelement(self.get_button_cart())
         assert self.check_url() == 'https://weareurals.ru/cart/', 'Ошибка: нет редиректа со страницы описания товара >> на страницу оформления заказа'
         print('Успешно: произошел редирект на страницу оформления заказа')
-
-
-

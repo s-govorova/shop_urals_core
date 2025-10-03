@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from datetime import datetime
 
+
 class ThanksForOrder(BaseMethod):
     #locators
     DATA_ORDER = (By.XPATH, "//li[contains(@class,'date')]/strong")
@@ -15,15 +16,9 @@ class ThanksForOrder(BaseMethod):
         )
 
     # actions
-
     # methods
-
     def check_info_success_order(self):
         data_today_full = datetime.now()
         data_today = data_today_full.strftime("%d.%m.%Y")
         assert self.get_data_order().text == data_today, f'Ошибка: дата оформления заказа не совпадает с текущим днем: {self.get_data_order().text}'
         print(f'Тесты ок: дата оформления заказа совпадает с текущим днем: {self.get_data_order().text}')
-
-
-
-

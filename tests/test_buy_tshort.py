@@ -1,4 +1,4 @@
-from page.t_shirts_page import TSHIRTS
+from page.t_shirts_page import TShirts
 from base.base_method import BaseMethod
 from page.product_descriptions_page import ProductDescription
 from page.make_order_page import MakeOrders
@@ -8,7 +8,7 @@ from page.thanks_you_page import ThanksForOrder
 
 
 def test_buy_tshirt(init_driver):
-    t_sh = TSHIRTS(init_driver)
+    t_sh = TShirts(init_driver)
     t_sh.select_tshirt()
     pr_descrip = ProductDescription(init_driver)
     pr_descrip.check_tshirt_in_cart()
@@ -23,16 +23,3 @@ def test_buy_tshirt(init_driver):
     thanks.check_info_success_order()
     b_s = BaseMethod(init_driver)
     b_s.screenshot_finish_test()
-
-
-
-
-    
-
-
-
-
-
-
-
-

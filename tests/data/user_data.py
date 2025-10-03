@@ -1,6 +1,7 @@
 from faker import Faker
 f = Faker('ru_RU')
 
+
 class UsersData:
     def __init__(self):
         self.name = f.first_name()
@@ -12,4 +13,3 @@ class UsersData:
         self.postal_code = f.postcode()
         self.phone = f.phone_number()
         self.email = f.ascii_free_email()
-

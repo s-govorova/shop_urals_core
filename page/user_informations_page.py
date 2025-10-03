@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from faker import Faker
 from page.make_order_page import MakeOrders
 
+
 class ClientField(BaseMethod):
     def __init__(self, driver, user):
         super().__init__(driver)
@@ -28,7 +29,6 @@ class ClientField(BaseMethod):
     TYPE_DELIVERY2 = (By.XPATH, "//label[@for='shipping_method_0_local_pickup-4']")
 
     #getters
-
     def get_name(self):
         return WebDriverWait(self.driver, 30).until(
             EC.element_to_be_clickable(self.NAME)
@@ -100,7 +100,6 @@ class ClientField(BaseMethod):
         )
 
     # actions
-
     def input_name(self):
         self.send_keys(self.get_name(), self.user.name)
 
@@ -137,7 +136,6 @@ class ClientField(BaseMethod):
     def click_button_approval_order(self):
         self.click_webelement(self.get_approval_order())
 
-
     # method
     def make_order(self):
         self.input_name()
@@ -157,9 +155,3 @@ class ClientField(BaseMethod):
     def check_text_type_delivery_2(self):
         text_type_delivery_2 = self.get_type_delivery2().text
         return text_type_delivery_2
-
-
-
-
-
-
